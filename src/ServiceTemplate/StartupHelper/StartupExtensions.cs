@@ -2,7 +2,7 @@
 using Microsoft.Extensions.DependencyInjection;
 using Serilog;
 
-namespace ServiceTemplate.Startup
+namespace ServiceTemplate.StartupHelper
 {
     public static class StartupExtensions
     {

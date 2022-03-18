@@ -8,7 +8,7 @@ using ServiceTemplate.Common;
 using ServiceTemplate.Data;
 using ServiceTemplate.Data.Abstractions;
 using ServiceTemplate.Data.Repositories;
-using ServiceTemplate.Startup;
+using ServiceTemplate.StartupHelper;
 
 namespace Oneview.Inpatient.Logging.ApiDemo
 {
@@ -31,7 +31,7 @@ namespace Oneview.Inpatient.Logging.ApiDemo
                 //options.UseSqlServer(Configuration.GetConnectionString(DbContant.ConnectionStringDbSection), b => b.MigrationsAssembly(typeof(Context).Assembly.FullName));
             }, ServiceLifetime.Transient);
             services.AddControllers();
-
+            services.AddSwaggerGen();
             services.AddTransient<ITestRepository, TestRepository>();
         }
 
@@ -41,6 +41,8 @@ namespace Oneview.Inpatient.Logging.ApiDemo
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
+                app.UseSwagger();
+                app.UseSwaggerUI();
             }
             //app.UseSerilogRequestLogging();
 
