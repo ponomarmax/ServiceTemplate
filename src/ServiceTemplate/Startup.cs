@@ -41,10 +41,10 @@ namespace Oneview.Inpatient.Logging.ApiDemo
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
-                app.UseSwagger();
-                app.UseSwaggerUI();
             }
-            //app.UseSerilogRequestLogging();
+
+            app.UseSwagger();
+            app.UseSwaggerUI();
 
             app.UseHttpsRedirection();
 

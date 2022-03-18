@@ -6,12 +6,11 @@ ARG SERVICE_NAME=ServiceTemplate
 
 WORKDIR /app
 COPY ./src ./src
-COPY $SERVICE_NAME.sln .
 RUN dotnet restore ./src/$SERVICE_NAME/$SERVICE_NAME.csproj
 
 
 #Publish image
-RUN dotnet publish  -c Release -o ./output
+RUN dotnet publish ./src/$SERVICE_NAME/$SERVICE_NAME.csproj -c Release -o ./output
 
 # Runtime image - copy published files into final image 
 FROM mcr.microsoft.com/dotnet/aspnet:3.1-alpine
