@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31515.178
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServiceTemplate", "ServiceTemplate\ServiceTemplate.csproj", "{2CE77DE5-A2F5-443E-8599-F6777EF094EF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ServiceTemplate", "src\ServiceTemplate\ServiceTemplate.csproj", "{2CE77DE5-A2F5-443E-8599-F6777EF094EF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{669558A2-73DB-4A68-BF21-F912C5FD3725}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -18,6 +20,9 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{2CE77DE5-A2F5-443E-8599-F6777EF094EF} = {669558A2-73DB-4A68-BF21-F912C5FD3725}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {42C44B0A-BF3A-4178-90A6-87577B0180F5}
