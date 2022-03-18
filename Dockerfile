@@ -12,12 +12,12 @@ RUN dotnet restore ./src/$SERVICE_NAME/$SERVICE_NAME.csproj
 
 #Publish image
 RUN dotnet publish  -c Release -o ./output
+
 # Runtime image - copy published files into final image 
 FROM mcr.microsoft.com/dotnet/aspnet:3.1-alpine
-#
+
 WORKDIR /app
 COPY --from=build /app/output .
-
 EXPOSE 6001
 
 ENTRYPOINT ["dotnet", "ServiceTemplate.dll"]
