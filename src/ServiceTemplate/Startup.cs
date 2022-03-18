@@ -27,6 +27,7 @@ namespace Oneview.Inpatient.Logging.ApiDemo
             services.AddLogging(Configuration);
             services.AddDbContextFactory<Context>(options =>
             {
+                // #DemontrationOnly
                 options.UseInMemoryDatabase(Configuration.GetConnectionString(DbContant.ConnectionStringDbSection));
                 //options.UseSqlServer(Configuration.GetConnectionString(DbContant.ConnectionStringDbSection), b => b.MigrationsAssembly(typeof(Context).Assembly.FullName));
             }, ServiceLifetime.Transient);
@@ -57,6 +58,7 @@ namespace Oneview.Inpatient.Logging.ApiDemo
                 endpoints.MapControllers();
             });
 
+            // #DemontrationOnly
             InitializeDb(app);
         }
 
